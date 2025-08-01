@@ -4,8 +4,18 @@
     <meta charset="UTF-8">
     <title>EachMoon Studios</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="EachMoon.ico"/>
+    <link rel="icon" type="image/x-icon" href="./Assets/EachMoon.ico"/>
     <style>
+        @font-face{
+            font-family: 'ZCOOL-KuaiLe';
+            src: url("./Assets/fonts/ZCOOL-KuaiLe.ttf")format("truetype");
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: "Seven-Segment";
+            src: url("./Assets/fonts/Seven-Segment.ttf")format("truetype");
+        }
         html, body {
             height: 100%;
             margin: 0;
@@ -16,7 +26,7 @@
             background-color: rgb(50, 50, 50);
             min-height: 100vh;
             overflow: hidden;    
-            font-family: "ZCOOL KuaiLe", cursive, sans-serif;
+            font-family: "ZCOOL-KuaiLe";
         }
         body::before {
             transition: background-image 0.5s ease;
@@ -73,7 +83,7 @@
         #time{
             top: 45%;
             left: 45%;
-            font-family: 'Seven segment', monospace;
+            font-family: 'Seven-segment', monospace;
             font-size: 2.8em;
             color: white;
             text-shadow: 0 0 5px rgba(255, 255, 255, 0.5), 0 0 10px rgba(255, 255, 255, 0.5), 0 0 15px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.5), 0 0 3px rgba(0, 0, 0, 0.8);
