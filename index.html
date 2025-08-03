@@ -1,4 +1,4 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zn-CN">
 <head>
     <meta charset="UTF-8">
@@ -23,7 +23,7 @@
         }
         body {
             position: relative;
-            background-color: rgb(50, 50, 50);
+            background-color: rgb(30, 30, 30);
             min-height: 100vh;
             overflow: hidden;    
             font-family: "ZCOOL-KuaiLe";
@@ -43,48 +43,15 @@
                 background-image: url('https://api.rls.ovh/horizontal');
             }
         }
-        /* body{
-            background-color: rgb(30, 30, 30);
-            font-family: "ZCOOL KuaiLe", cursive, sans-serif;
-        } */
-        .background-container{
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -2;
-            opacity: 0.9;
-            transition: opacity 0.3s ease;
-            background: url('https://api.rls.ovh/vertical') center/cover no-repeat;
-            @media (orientation: landscape) {
-                background-image: url('https://api.rls.ovh/horizontal');
-            }
-        }
         .text{
             color: white;
             font-size: 24px;
-        }
-        .StartScreen{
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 200;
-            background-color: rgb(30, 30, 30);
-        }
-        .Clock{
-            display: flex;
-            flex-direction: column;
-            color: white;
-            z-index: 100;
         }
         #time{
             top: 45%;
             left: 45%;
             font-family: 'Seven-segment', monospace;
-            font-size: 2.8em;
+            font-size: 3em;
             color: white;
             text-shadow: 0 0 5px rgba(255, 255, 255, 0.5), 0 0 10px rgba(255, 255, 255, 0.5), 0 0 15px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.5), 0 0 3px rgba(0, 0, 0, 0.8);
             margin-bottom: 5px;
@@ -93,42 +60,136 @@
         #date{
             top: 45%;
             left: 45%;
-            font-size: 0.9em;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), 0 0 3px rgba(0, 0, 0, 0.7);
+            font-size: 1em;
         }
-        @keyframes Start{
-            80%{height: 100%;}
-            100%{height: 0%;}
+        .screen{
+            display: flex;
         }
-        @keyframes StartText{
-            80%{opacity: 1;}
-            100%{opacity: 0;}
+        .title{
+            height: 33%;
+            display: flex;
+            margin-top: 10%;
+            margin-left: 40px;
+            padding-right: 20px;
+            border-radius: 10px;
+            background-color: rgba(64, 64, 64, 0.7);
+        }
+        .titleTEXT{
+            margin-top: -30px;
+            margin-left: 20px;
+            line-height: 0.4;
+            font-size: 4em;
+            color: white;
+        }
+        .ICON{
+            padding: 10px;
+        }
+        .toolt{
+            margin: 40px;
+            margin-top: 10%;
+            display: flex;
+            flex-direction: column;
+        }
+        .Clock{
+            width: 40%;
+            display: flex;
+            flex-direction: column;
+            color: white;
+            border-radius: 10px;
+            background-color: rgba(64, 64, 64, 0.7);
+            padding: 20px;
+            z-index: 100;
+        }
+        .Block{
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            color: white;
+            border-radius: 10px;
+            background-color: rgba(64, 64, 64, 0.7);
+            margin-top: 30px;
+            padding: 20px;
+            z-index: 100;
+        }
+        .Block0{
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            color: white;
+            border-radius: 10px;
+            background-color: rgba(64, 64, 64, 0.7);
+            margin-top: 30px;
+            margin-left: 40px;
+            padding: 20px;
+            z-index: 100;
+        }
+        .Title{
+            margin-top: -10px;
+            font-size: 1.2em;
+            border-bottom: 1px solid rgba(128, 128, 128, 0.7);
         }
     </style>
 </head>
 <body>
-    <!-- <div class="background-container"></div> -->
-    <div class="StartScreen" style="animation: Start 5s;animation-fill-mode: forwards;">
-        <p style="color: rgb(30, 30, 30 );font-size: 64px;text-align: center;height: 10%;"></p>
-        <p style="color: white;font-size: 64px;text-align: center;height: 10%;animation: StartText 5s;animation-fill-mode: forwards;">EachMoon</p>
-        <p style="color: white;font-size: 64px;text-align: center;height: 10%;animation: StartText 5s;animation-fill-mode: forwards;">Studios</p>
+    <div class="screen">
+        <div style="display: flex;flex-direction: column;">
+            <div class="title">
+                <div class="ICON"><img src="./Assets/ICON-256X256px.png" style="width: 200px;height: 200px;"></div>
+                <div class="titleTEXT">
+                    <p>EachMoon</p>
+                    <p>Studios</p>
+                </div>
+            </div>
+            <div class="Block0">
+                <div class="Title"><p>欢迎来到EachMoon Studios</p></div>
+                <div class="text" style="font-size: 1em;">
+                    <p>目前只完成了此界面。。。</p>
+                </div>
+            </div>
+        </div>
+        <div class="toolt">
+            <div style="display: flex;">
+                <div class="Clock">
+                    <div id="time"></div>
+                    <div id="date"></div>
+                </div>
+                <div class="Block" style="margin-left: 30px;">
+                    <div class="Title">小网站</div>
+                    <div class="text" style="font-size: 1em;">
+                        <div onclick="window.open('https://lab.magiconch.com/homo/', '_blank')"><p>恶臭数字论证器</p></div>
+                    </div>
+                </div>
+            </div>
+            <div class="Block">
+                <div class="Title"><p>公告</p></div>
+                <div class="text" style="font-size: 1em;">
+                    <p>EachMoon Studios Website开始构建--2025.07.13</p>
+                    <p>EachMoon Days 2025开启,2025年度项目确定--2025.07.10</p>
+                </div>
+            </div>
+            <div class="Block">
+                <div class="Title"><p>近期项目</p></div>
+                <div class="text" style="font-size: 1em;">
+                    <p>EachMoon Studios Website--最后更新于2025.08.03</p>
+                    <p>Zheb--最后更新于2025.07.17</p>
+                </div>
+            </div>
+            <script>
+                function updateTime() {
+                    const now = new Date();
+                    const hours = now.getHours().toString().padStart(2, '0');
+                    const minutes = now.getMinutes().toString().padStart(2, '0');
+                    const seconds = now.getSeconds().toString().padStart(2, '0');
+                    document.getElementById('time').textContent = `${hours}:${minutes}:${seconds}`;
+                    // document.getElementById('time').textContent = `1:1:1`;
+                    const days = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
+                    const date = `${now.getFullYear()}年${now.getMonth() + 1}月${now.getDate()}日 ${days[now.getDay()]}`;
+                    document.getElementById('date').textContent = date;
+                }
+                setInterval(updateTime, 1000);
+                updateTime();
+            </script>
+        </div>
     </div>
-    <div class="Clock">
-        <div id="time"></div>
-        <div id="date"></div>
-    </div>
-    <script>
-        function updateTime() {
-            const now = new Date();
-            const hours = now.getHours().toString().padStart(2, '0');
-            const minutes = now.getMinutes().toString().padStart(2, '0');
-            const seconds = now.getSeconds().toString().padStart(2, '0');
-            document.getElementById('time').textContent = `${hours}:${minutes}:${seconds}`;
-            const days = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
-            const date = `${now.getFullYear()}年${now.getMonth() + 1}月${now.getDate()}日 ${days[now.getDay()]}`;
-            document.getElementById('date').textContent = date;
-        }
-        setInterval(updateTime, 1000);
-        updateTime();
-    </script>
 </body>
+</html>
