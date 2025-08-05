@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zn-CN">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <title>EachMoon Studios</title>
@@ -29,7 +29,7 @@
             font-family: "ZCOOL-KuaiLe";
         }
         body::before {
-            transition: background-image 0.5s ease;
+            /* transition: background-image 0.5s ease; */
             content: "";
             position: fixed;
             top: 0;
@@ -38,37 +38,23 @@
             height: 100%;
             z-index: -1;
             opacity: 0.9;
-            background: url('https://api.rls.ovh/vertical') center/cover no-repeat;
+            background: url('./Assets/background-image/vertical.png') center/cover no-repeat;
             @media (orientation: landscape) {
-                background-image: url('https://api.rls.ovh/horizontal');
+                background-image: url('./Assets/background-image/horizontal.png');
             }
         }
         .text{
             color: white;
             font-size: 24px;
         }
-        #time{
-            top: 45%;
-            left: 45%;
-            font-family: 'Seven-segment', monospace;
-            font-size: 3em;
-            color: white;
-            text-shadow: 0 0 5px rgba(255, 255, 255, 0.5), 0 0 10px rgba(255, 255, 255, 0.5), 0 0 15px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.5), 0 0 3px rgba(0, 0, 0, 0.8);
-            margin-bottom: 5px;
-            letter-spacing: 3px;
-        }
-        #date{
-            top: 45%;
-            left: 45%;
-            font-size: 1em;
-        }
         .screen{
             display: flex;
+            padding-top: 5%;
         }
         .title{
-            height: 33%;
+            /* height: 33%; */
+            width: 570px;
             display: flex;
-            margin-top: 10%;
             margin-left: 40px;
             margin-right: 40px;
             padding-right: 20px;
@@ -87,12 +73,45 @@
         }
         .toolt{
             margin: 40px;
-            margin-top: 10%;
+            margin-top: 20px;
             display: flex;
             flex-direction: column;
         }
+
+        .TIME{
+            display: flex;
+        }
+        .CountDown{
+            width: 150px;
+            display: flex;
+            flex-direction: column;
+            color: white;
+            border-radius: 10px;
+            background-color: rgba(64, 64, 64, 0.7);
+            margin-left: 30px;
+            padding: 20px;
+            z-index: 100;
+        }
+        #Year{
+            top: 45%;
+            left: 45%;
+            font-size: 1.2em;
+        }
+        #Month{
+            top: 45%;
+            left: 45%;
+            font-size: 1.2em;
+            padding-top: 10px;
+        }
+        #Day{
+            top: 45%;
+            left: 45%;
+            font-size: 1.2em;
+            padding-top: 10px;
+        }
+
         .Clock{
-            width: 170px;
+            width: 175px;
             display: flex;
             flex-direction: column;
             color: white;
@@ -101,6 +120,22 @@
             padding: 20px;
             z-index: 100;
         }
+        #time{
+            top: 45%;
+            left: 45%;
+            font-family: 'Seven-segment', monospace;
+            font-size: 3em;
+            color: white;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.5), 0 0 10px rgba(255, 255, 255, 0.5), 0 0 15px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.5), 0 0 3px rgba(0, 0, 0, 0.8);
+            margin-bottom: 5px;
+            letter-spacing: 3px;
+        }
+        #date{
+            top: 45%;
+            left: 45%;
+            font-size: 1em;
+        }
+
         .Block{
             height: auto;
             display: flex;
@@ -111,8 +146,10 @@
             margin-top: 30px;
             padding: 20px;
             z-index: 100;
+            /* backdrop-filter: blur(4px); */
         }
         .Block0{
+            max-width: 40vw;
             height: auto;
             display: flex;
             flex-direction: column;
@@ -124,40 +161,48 @@
             margin-right: 40px;
             padding: 20px;
             z-index: 100;
+            /* backdrop-filter: blur(4px); */
         }
         .Title{
             margin-top: -10px;
             font-size: 1.2em;
             border-bottom: 1px solid rgba(128, 128, 128, 0.7);
         }
-        .firstline{
-            display: flex;
-        }
-        .BlockLINK{
-            height: auto;
-            display: flex;
-            flex-direction: column;
+
+        .CopyRight{
+            margin-top: -20px;
+            width: 100%;
+            text-align: center;
+            font-size: 0.9rem;
             color: white;
-            border-radius: 10px;
-            background-color: rgba(64, 64, 64, 0.7);
-            margin-top: 0;
-            margin-left: 30px;
-            padding: 20px;
-            z-index: 100;
+            
         }
+
         @media(orientation: portrait){
             .screen {
                 flex-direction: column;
             }
             .title{
                 flex-direction: column;
+                width: 360px;
             }
-            .firstline{
+            /* .TIME{
                 flex-direction: column;
             }
-            .BlockLINK{
+            .CountDown{
                 margin-top: 30px;
                 margin-left: 0;
+            } */
+        }
+        @media only screen and (max-width: 1000px){
+            .screen{
+                flex-wrap: wrap;
+            }
+            .toolt{
+                margin-top: 30px;
+            }
+            .Block0{
+                max-width: 100vw;
             }
         }
     </style>
@@ -174,39 +219,63 @@
             </div>
             <div class="Block0">
                 <div class="Title"><p>欢迎来到EachMoon Studios</p></div>
-                <div class="text" style="font-size: 1em;">
-                    <p>目前只完成了此界面。。。</p>
+                <div class="text" style="font-size: 1em;line-height: 25px;">
+                    <p>Hi,只是一个由几个在役OIer组成的工作室,主要从事一些游戏和OI项目的开发.目前我们正在备战CSP2025和NOIP2025,更新进度会较为缓慢.目前只完成了这个界面,其他界面尚在开发中...</p>
                 </div>
             </div>
         </div>
         <div class="toolt">
-            <div class="firstline">
+            <div class="TIME">
                 <div class="Clock">
                     <div id="time"></div>
                     <div id="date"></div>
                 </div>
-                <div class="BlockLINK">
-                    <div class="Title">小网站</div>
-                    <div class="text" style="font-size: 1em;">
-                        <div onclick="window.open('https://lab.magiconch.com/homo/', '_blank')"><p>恶臭数字论证器</p></div>
-                    </div>
+                <div class="CountDown">
+                    <div id="Year"></div>
+                    <div id="Month"></div>
+                    <div id="Day"></div>
                 </div>
             </div>
             <div class="Block">
                 <div class="Title"><p>公告</p></div>
                 <div class="text" style="font-size: 1em;">
                     <p>EachMoon Studios Website开始构建--2025.07.13</p>
-                    <p>EachMoon Days 2025开启,2025年度项目确定--2025.07.10</p>
+                    <p>EachMoon Studios 2025年度项目确定--2025.07.10</p>
+                    <p>EachMoon Days 2025!--2025.07.10</p>
                 </div>
             </div>
             <div class="Block">
                 <div class="Title"><p>近期项目</p></div>
                 <div class="text" style="font-size: 1em;">
-                    <p>EachMoon Studios Website--最后更新于2025.08.03</p>
+                    <p>EachMoon Studios Website--最后更新于2025.08.05</p>
                     <p>Zheb--最后更新于2025.07.17</p>
                 </div>
             </div>
             <script>
+                function IsThisYearRun(){
+                    const now = new Date();
+                    const ThisYear = now.getFullYear();
+                    return (ThisYear%4==0&&ThisYear%100!=0)||ThisYear%400==0;
+                }
+                function GetMonthDays(x){
+                    if(x==2){
+                        if(IsThisYearRun())return 29;
+                        else return 28;
+                    }
+                    const Days = [31,28,31,30,31,30,31,31,30,31,30,31];
+                    return Days[x-1];
+                }
+                function GetLYearDays(){
+                    const now = new Date();
+                    const currentMonth = now.getMonth() + 1;
+                    const currentDate = now.getDate();
+                    let passedDays = currentDate;
+                    for (let i = 1; i < currentMonth; i++) {
+                        passedDays += GetMonthDays(i);
+                    }
+                    const totalDays = IsThisYearRun() ? 366 : 365;
+                    return totalDays - passedDays;
+                }
                 function updateTime() {
                     const now = new Date();
                     const hours = now.getHours().toString().padStart(2, '0');
@@ -215,13 +284,20 @@
                     document.getElementById('time').textContent = `${hours}:${minutes}:${seconds}`;
                     // document.getElementById('time').textContent = `1:1:1`;
                     const days = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
-                    const date = `${now.getFullYear()}年${now.getMonth() + 1}月${now.getDate()}日 ${days[now.getDay()]}`;
+                    const date = `${now.getFullYear()}年${now.getMonth()+1}月${now.getDate()}日 ${days[now.getDay()]}`;
                     document.getElementById('date').textContent = date;
+                    const lhours = (24 - now.getHours()).toString();
+                    const lDays = (GetMonthDays(now.getMonth() + 1) - now.getDate()).toString();
+                    const lyear = GetLYearDays().toString();
+                    document.getElementById('Year').textContent = `今年还有 ${lyear} 天`;
+                    document.getElementById('Month').textContent = `本月还有 ${lDays} 天`;
+                    document.getElementById('Day').textContent = `今天还有 ${lhours} 小时`;
                 }
                 setInterval(updateTime, 1000);
                 updateTime();
             </script>
         </div>
     </div>
+    <div class="CopyRight">© 2025 EachMoon Studios. All Rights Reserved.</div>
 </body>
 </html>
