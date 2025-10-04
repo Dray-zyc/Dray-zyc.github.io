@@ -1,0 +1,179 @@
+.CopyRight{
+    margin-top: 50px;
+    width: 100%;
+    text-align: center;
+    font-size: 0.9rem;
+    color: white;
+}
+.Block{
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    border-radius: 10px;
+    background-color: rgba(64, 64, 64, 0.7);
+    margin-top: 30px;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding: 20px;
+    z-index: 100;
+}
+.TitleH1{
+    margin-top: -10px;
+    font-size: 3em;
+    text-align: center;
+}
+.TitleH2{
+    margin-top: -10px;
+    font-size: 2em;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.7);
+    text-align: center;
+}
+.TitleH2f{
+    margin-top: -30px;
+    font-size: 1.8em;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.7);
+    text-align: center;
+    color: rgba(255,255,255,0.8);
+}
+.TitleH3{
+    margin-top: -10px;
+    font-size: 1.5em;
+    text-align: center;
+}
+.text{
+    color: white;
+    font-size: 1em;
+    line-height: 1.5;
+    word-break: break-all;
+}
+.name{
+    margin-top: 30px;
+    text-align: right;
+    font-size: 1em;
+    line-height: 5px;
+    border-top: 1px solid rgba(128, 128, 128, 0.7);
+}
+/* 模板样式文件 */
+* {
+    transition: all 0.3s ease;
+}
+
+.Block {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    border-radius: 10px;
+    background-color: rgba(64, 64, 64, 0.7);
+    margin-top: 30px;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding: 20px;
+    z-index: 100;
+}
+
+.Block:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.1);
+    background-color: rgba(80, 80, 80, 0.8);
+}
+
+.TitleH1 {
+    margin-top: -10px;
+    font-size: 3em;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.7);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.TitleH1:hover {
+    border-bottom-color: rgba(173, 216, 230, 0.8);
+    color: rgba(173, 216, 230, 0.9);
+}
+
+.TitleH2f {
+    margin-top: -30px;
+    font-size: 1.2em;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.7);
+    text-align: center;
+    color: rgba(255,255,255,0.8);
+}
+
+.TAG {
+    display: flex;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.tag {
+    padding: 5px 10px;
+    border-radius: 15px;
+    background-color: rgba(173, 216, 230, 0.3);
+    color: white;
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tag:hover {
+    background-color: rgba(173, 216, 230, 0.5);
+    transform: scale(1.05);
+}
+
+.text {
+    color: white;
+    font-size: 1em;
+    line-height: 1.5;
+    word-break: break-all;
+}
+
+.download {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.link, .date, .Dev, .Alpha, .Beta, .Pre, .Snapshot, .Release, .Debug {
+    padding: 8px 15px;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.link:hover, .date:hover, .Dev:hover, .Alpha:hover, .Beta:hover, .Pre:hover, .Snapshot:hover, .Release:hover, .Debug:hover {
+    background-color: rgba(173, 216, 230, 0.3);
+    transform: translateY(-2px);
+}
+
+.CopyRight {
+    margin-top: 50px;
+    width: 100%;
+    text-align: center;
+    font-size: 0.9rem;
+    color: white;
+}
+.clickable {
+    cursor: pointer;
+    position: relative;
+}
+        
+.clickable:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding-left: 10px;
+    color: #9CDCFE;
+}
+
+.clickable::after {
+    content: '→';
+    position: absolute;
+    right: 15px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+        
+.clickable:hover::after {
+    opacity: 1;
+}

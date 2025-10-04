@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>News_EachMoon Studios</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../Assets/EachMoon.ico"/>
+    <link rel="stylesheet" href="../Assets/font_ans_background-image.css">
+    <style>
+        /* 新增互动样式 */
+        * {
+            transition: all 0.3s ease;
+        }
+        
+        .interactive:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 255, 255, 0.1);
+            background-color: rgba(80, 80, 80, 0.8);
+        }
+        
+        .clickable {
+            cursor: pointer;
+            position: relative;
+            padding: 8px 5px;
+            border-radius: 5px;
+        }
+        
+        .clickable:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding-left: 15px;
+            color: #9CDCFE;
+        }
+        
+        .clickable::after {
+            content: '→';
+            position: absolute;
+            right: 15px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .clickable:hover::after {
+            opacity: 1;
+        }
+        
+        .article {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .article:hover {
+            transform: translateX(10px);
+            background-color: rgba(80, 80, 80, 0.8);
+        }
+
+        .CopyRight{
+            margin-top: 50px;
+            width: 100%;
+            text-align: center;
+            font-size: 0.9rem;
+            color: white;
+        }
+        .Block{
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            color: white;
+            border-radius: 10px;
+            background-color: rgba(64, 64, 64, 0.7);
+            margin-top: 30px;
+            margin-left: 10%;
+            margin-right: 10%;
+            padding: 20px;
+            z-index: 100;
+            /* backdrop-filter: blur(4px); */
+        }
+        .TitleH1{
+            margin-top: -10px;
+            font-size: 3em;
+            border-bottom: 1px solid rgba(128, 128, 128, 0.7);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .TitleH1:hover {
+            border-bottom-color: rgba(173, 216, 230, 0.8);
+            color: rgba(173, 216, 230, 0.9);
+        }
+        
+        .TitleH2{
+            margin-top: -10px;
+            font-size: 2em;
+            border-bottom: 1px solid rgba(128, 128, 128, 0.7);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .TitleH2:hover {
+            border-bottom-color: rgba(173, 216, 230, 0.8);
+            color: rgba(173, 216, 230, 0.9);
+        }
+        
+        .TitleH3{
+            margin-top: -10px;
+            font-size: 1.5em;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .TitleH3:hover {
+            color: rgba(173, 216, 230, 0.9);
+            transform: scale(1.05);
+        }
+        
+        .TitleH3f{
+            margin-top: -30px;
+            font-size: 1.2em;
+            border-bottom: 1px solid rgba(128, 128, 128, 0.7);
+            text-align: center;
+            color: rgba(255,255,255,0.8);
+        }
+        .article{
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            color: white;
+            border-radius: 10px;
+            background-color: rgba(64, 64, 64, 0.7);
+            margin-top: 30px;
+            padding: 20px;
+            z-index: 100;
+        }
+        .text{
+            color: white;
+            font-size: 1em;
+            line-height: 1.5;
+            word-break: break-all;
+        }
+    </style>
+</head>
+<body>
+    <div class="Block interactive">
+        <div class="TitleH1"><p>项目</p></div>
+        <div class="text" style="font-size: 1.2em;">
+            <p>您可在此浏览我们所有项目.</p>
+        </div>
+    </div>
+    <div class="Block interactive">
+        <div class="TitleH2"><p>近期项目</p></div>
+        <div class="text">
+            <p class="clickable" onclick="window.open('./projects/EM Website.html')">EachMoon Studios Website--最后更新于2025.10.04</p>
+            <p class="clickable">Zheb--最后更新于2025.07.17</p>
+        </div>
+    </div>
+    <div class="Block interactive" style="padding-bottom: 100px;">
+        <div class="TitleH2"><p>所有项目</p></div>
+        <div class="article" onclick="window.open('./projects/EM Website.html')">
+            <div class="TitleH3"><p>EachMoon Studios Website</p></div>
+            <div class="TitleH3f"><p>2025.10.04</p></div>
+            <div class="text">
+                <p>EachMoon Studios 官方网站</p>
+            </div>
+        </div><div class="article">
+            <div class="TitleH3"><p>Zheb</p></div>
+            <div class="TitleH3f"><p>2025.07.17</p></div>
+            <div class="text">
+                <p>EachMoon Studios 2025 年度项目</p>
+            </div>
+        </div>
+    </div>
+    <div class="CopyRight">© 2025 EachMoon Studios. All Rights Reserved.</div>
+    <div class="CopyRight" style="visibility: hidden;">© 2025 EachMoon Studios. All Rights Reserved.</div>
+</body>
+</html>
