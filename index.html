@@ -5,44 +5,60 @@
     <title>EachMoon Studios</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="./Assets/EachMoon.ico"/>
+    <link rel="stylesheet" href="./Assets/font_ans_background-image.css">
     <style>
-        @font-face{
-            font-family: 'ZCOOL-KuaiLe';
-            src: url("./Assets/fonts/ZCOOL-KuaiLe.ttf")format("truetype");
-            font-weight: normal;
-            font-style: normal;
+        * {
+            transition: all 0.3s ease;
         }
-        @font-face {
-            font-family: "Seven-Segment";
-            src: url("./Assets/fonts/Seven-Segment.ttf")format("truetype");
+        
+        .interactive:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 255, 255, 0.1);
+            background-color: rgba(80, 80, 80, 0.8);
         }
-        html, body {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-        }
-        body {
+        
+        .clickable {
+            cursor: pointer;
             position: relative;
-            background-color: rgb(30, 30, 30);
-            min-height: 100vh;
-            /* overflow: hidden;     */
-            font-family: "ZCOOL-KuaiLe";
         }
-        body::before {
-            /* transition: background-image 0.5s ease; */
-            content: "";
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            opacity: 0.9;
-            background: url('./Assets/background-image/vertical.png') center/cover no-repeat;
-            @media (orientation: landscape) {
-                background-image: url('./Assets/background-image/horizontal.png');
-            }
+        
+        .clickable:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding-left: 10px;
+            color: #9CDCFE;
         }
+        
+        .clickable::after {
+            content: '→';
+            position: absolute;
+            right: 15px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .clickable:hover::after {
+            opacity: 1;
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { text-shadow: 0 0 5px rgba(255, 255, 255, 0.5); }
+            50% { text-shadow: 0 0 15px rgba(255, 255, 255, 0.8), 0 0 20px rgba(173, 216, 230, 0.6); }
+            100% { text-shadow: 0 0 5px rgba(255, 255, 255, 0.5); }
+        }
+        
+        .Clock, .CountDown {
+            transition: all 0.3s ease;
+        }
+        
+        .Clock:hover, .CountDown:hover {
+            transform: scale(1.03);
+            background-color: rgba(70, 70, 70, 0.8);
+        }
+
         .text{
             color: white;
             font-size: 24px;
@@ -139,6 +155,7 @@
         .Block{
             height: auto;
             display: flex;
+            min-width: 120%;
             flex-direction: column;
             color: white;
             border-radius: 10px;
@@ -167,6 +184,14 @@
             margin-top: -10px;
             font-size: 1.2em;
             border-bottom: 1px solid rgba(128, 128, 128, 0.7);
+            cursor: pointer;
+            padding-bottom: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .Title:hover {
+            border-bottom-color: rgba(173, 216, 230, 0.8);
+            color: rgba(173, 216, 230, 0.9);
         }
 
         .CopyRight{
@@ -210,45 +235,46 @@
 <body>
     <div class="screen">
         <div style="display: flex;flex-direction: column;">
-            <div class="title">
+            <div class="title interactive">
                 <div class="ICON"><img src="./Assets/ICON-256X256px.png" style="width: 200px;height: 200px;"></div>
                 <div class="titleTEXT">
                     <p>EachMoon</p>
                     <p>Studios</p>
                 </div>
             </div>
-            <div class="Block0">
+            <div class="Block0 interactive">
                 <div class="Title"><p>欢迎来到EachMoon Studios</p></div>
                 <div class="text" style="font-size: 1em;line-height: 25px;">
-                    <p>Hi,只是一个由几个在役OIer组成的工作室,主要从事一些游戏和OI项目的开发.目前我们正在备战CSP2025和NOIP2025,更新进度会较为缓慢.目前只完成了这个界面,其他界面尚在开发中...</p>
+                    <p>Hi,只是一个由几个在役OIer组成的工作室,主要从事一些游戏和OI项目的开发.目前我们正在备战CSP2025和NOIP2025,更新进度会较为缓慢.</p>
                 </div>
             </div>
         </div>
         <div class="toolt">
             <div class="TIME">
-                <div class="Clock">
-                    <div id="time"></div>
+                <div class="Clock interactive">
+                    <div id="time" class="pulse"></div>
                     <div id="date"></div>
                 </div>
-                <div class="CountDown">
+                <div class="CountDown interactive">
                     <div id="Year"></div>
                     <div id="Month"></div>
                     <div id="Day"></div>
                 </div>
             </div>
-            <div class="Block">
-                <div class="Title"><p>公告</p></div>
+            <div class="Block interactive">
+                <div class="Title" onclick="window.open('./MainPage/News.html')"><p>新闻</p></div>
                 <div class="text" style="font-size: 1em;">
-                    <p>EachMoon Studios Website开始构建--2025.07.13</p>
-                    <p>EachMoon Studios 2025年度项目确定--2025.07.10</p>
-                    <p>EachMoon Days 2025!--2025.07.10</p>
+                    <p class="clickable" onclick="window.open('./MainPage/articles/si0fw4-oa098fkb-ba-85l3.html')">EachMoon Studios 项目暂停开发--2025.10.01</p>
+                    <p class="clickable" onclick="window.open('./MainPage/articles/cpygkc-s4xp67gw-s1-vruw.html')">EachMoon Studios Website开始构建--2025.07.13</p>
+                    <p class="clickable">EachMoon Studios 2025年度项目确定--2025.07.10</p>
+                    <p class="clickable">EachMoon Days 2025!--2025.07.10</p>
                 </div>
             </div>
-            <div class="Block">
-                <div class="Title"><p>近期项目</p></div>
+            <div class="Block interactive">
+                <div class="Title" onclick="window.open('./MainPage/Project.html')"><p>近期项目</p></div>
                 <div class="text" style="font-size: 1em;">
-                    <p>EachMoon Studios Website--最后更新于2025.08.05</p>
-                    <p>Zheb--最后更新于2025.07.17</p>
+                    <p class="clickable" onclick="window.open('./MainPage/projects/EM Website.html')">EachMoon Studios Website--最后更新于2025.10.04</p>
+                    <p class="clickable">Zheb--最后更新于2025.07.17</p>
                 </div>
             </div>
             <script>
