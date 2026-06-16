@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>" Project Name "_EachMoon Studios</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../../Assets/EachMoon.ico"/>
+    <link rel="stylesheet" href="../../Assets/font_ans_background-image.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="Block">
+        <div class="TitleH1">
+            <p>" Project Name "</p>
+        </div>
+        <div class="TAG">
+            <div class="tag"><p>" tag "</p></div>
+        </div>
+        <div class="text">
+            <p>" context "</p>
+        </div>
+    </div>
+    <div class="Block">
+        <div class="TitleH2" style="margin-top: 10px;padding-bottom: 20px;">项目信息</div>
+        <div class="tabs">
+            <button class="tab-btn" data-tab="about">关于</button>
+            <button class="tab-btn active" data-tab="download">下载</button>
+            <button class="tab-btn" data-tab="updatelog">更新日志</button>
+            <button class="tab-btn" data-tab="credits">制作人员</button>
+        </div>
+        <div id="about" class="tab-content">
+            <div class="about-text">
+                <p>" about text "</p>
+            </div>
+        </div>
+        <div id="download" class="tab-content active">
+            <div class="download">
+                <div class="link" onclick="window.open('<Download Link>')"><p>" Version "</p></div>
+                <div class="date"><p>" Update Date "</p></div>
+                <div class="Dev"><p>Dev</p></div>
+                <div class="Alpha"><p>Alpha</p></div>
+                <div class="Beta"><p>Beta</p></div>
+                <div class="Pre"><p>Pre</p></div>
+                <div class="Snapshot"><p>Snapshot</p></div>
+                <div class="Release"><p>Release</p></div>
+                <div class="Debug"><P>Debug</P></div>
+            </div>
+        </div>
+        <div id="updatelog" class="tab-content">
+            <div class="download">
+                <div class="link" onclick="window.open('<Article Link>')"><p>" Version "</p></div>
+                <div class="date"><p>" Update Date "</p></div>
+                <div class="Dev"><p>Dev</p></div>
+                <div class="Alpha"><p>Alpha</p></div>
+                <div class="Beta"><p>Beta</p></div>
+                <div class="Pre"><p>Pre</p></div>
+                <div class="Snapshot"><p>Snapshot</p></div>
+                <div class="Release"><p>Release</p></div>
+                <div class="Debug"><P>Debug</P></div>
+            </div>
+        </div>
+        <div id="credits" class="tab-content">
+           <div class="section-group">
+                <div class="TitleH2f" style="margin-top: 10px;padding-bottom: 20px;">制作人员</div>
+                <div class="credits-grid">
+                    <div class="credit-card"><span class="credit-name">" A "</span> - " B "</div>
+                </div>
+            </div>
+            <div class="section-group">
+                <div class="TitleH2f" style="margin-top: 10px;padding-bottom: 20px;">开发工具</div>
+                <div class="credits-grid">
+                    <div class="credit-card"><span class="credit-name">" A "</span> - " B "</div>
+                </div>
+            </div>
+            <div class="section-group">
+                <div class="TitleH2f" style="margin-top: 10px;padding-bottom: 20px;">特别致谢</div>
+                <div class="credits-grid">
+                    <div class="credit-card"><span class="credit-name">" A "</span> - " B "</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="CopyRight">© 2025 EachMoon Studios. All Rights Reserved.</div>
+    <div class="CopyRight" style="visibility: hidden;">© 2025 EachMoon Studios. All Rights Reserved.</div>
+
+    <script>
+        (function() {
+            const tabs = document.querySelectorAll('.tab-btn');
+            const contents = {
+                about: document.getElementById('about'),
+                download: document.getElementById('download'),
+                updatelog: document.getElementById('updatelog'),
+                credits: document.getElementById('credits')
+            };
+
+            function activateTab(tabId) {
+                Object.values(contents).forEach(content => {
+                    if(content) content.classList.remove('active');
+                });
+                if(contents[tabId]) contents[tabId].classList.add('active');
+                tabs.forEach(btn => {
+                    btn.classList.remove('active');
+                    if(btn.dataset.tab === tabId) btn.classList.add('active');
+                });
+            }
+
+            tabs.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const tabId = btn.dataset.tab;
+                    if(tabId) activateTab(tabId);
+                });
+            });
+            activateTab('about');
+        })();
+    </script>
+</body>
+</html>

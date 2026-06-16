@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Ooze Sigil_EachMoon Studios</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../../Assets/EachMoon.ico"/>
+    <link rel="stylesheet" href="../../Assets/font_ans_background-image.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="Block">
+        <div class="TitleH1">
+            <p>Ooze Sigil</p>
+        </div>
+        <div class="TAG">
+            <div class="tag"><p>Godot 4 Engine</p></div> 
+            <div class="tag"><p>VS Code</p></div>
+            <div class="tag"><p>GDScript</p></div>
+            <div class="tag"><p>EachMoonStudios</p></div>
+        </div>
+        <div class="text">
+            <p>每一次施法都会改变地下城的记忆.你是一只携带远古法杖的史莱姆,在因果错乱的迷宫中,你的攻击,死亡甚至脚步声都将重塑接下来的房间.你会打破循环,还是成为新的诅咒?</p>
+        </div>
+    </div>
+
+    <div class="Block">
+        <div class="TitleH2f" style="margin-top:-10px;">项目信息</div>
+        
+        <div class="tabs">
+            <button class="tab-btn" data-tab="about">关于游戏</button>
+            <button class="tab-btn active" data-tab="download">下载</button>
+            <button class="tab-btn" data-tab="updatelog">更新日志</button>
+            <button class="tab-btn" data-tab="credits">制作人员</button>
+        </div>
+
+        <!-- 关于游戏区域 -->
+        <div id="about" class="tab-content">
+            <div class="about-text">
+                <p>这是一款2D横板轻Roguelike游戏.</p>
+                <p>游戏采用简约的平滑画风,使用霓虹+高对比度的颜色风格.</p>
+                <p>玩家作为一只史莱姆,意外获得了一只法杖,踏上了解开地下城过往故事的征途.</p>
+                <p>玩家的操作会对后续的游戏产生影响,所以先思考再行动吧.</p>
+            </div>
+        </div>
+
+        <!-- 下载区域 -->
+        <div id="download" class="tab-content active">
+            <div class="text">目前没有公开版本</div>
+        </div>
+
+        <!-- 更新日志区域 -->
+        <div id="updatelog" class="tab-content">
+            <div class="text">目前没有公开版本</div>
+        </div>
+
+        <!-- 制作人员及鸣谢 -->
+        <div id="credits" class="tab-content">
+            <div class="section-group">
+                <div class="TitleH2f" style="margin-top: 10px;padding-bottom: 20px;">制作人员</div>
+                <div class="credits-grid">
+                    <div class="credit-card"><span class="credit-name">Dray_zyc</span> - 代码/美术/音乐/游戏设计</div>
+                    <div class="credit-card"><span class="credit-name">君君驰</span> - 提供游戏设计建议/游戏调试</div>
+                    <div class="credit-card"><span class="credit-name">EachMoon Studios</span> - 所属开发团队</div>
+                </div>
+            </div>
+            <div class="section-group">
+                <div class="TitleH2f" style="margin-top: 10px;padding-bottom: 20px;">开发工具</div>
+                <div class="credits-grid">
+                    <div class="credit-card"><span class="credit-name">VSCode</span> - 代码编辑器</div>
+                    <div class="credit-card"><span class="credit-name">Godot4 Engine</span> - 游戏引擎</div>
+                    <div class="credit-card"><span class="credit-name">Aseprite</span> - 美术制作</div>
+                    <div class="credit-card"><span class="credit-name">生成式人工智能大模型</span> - 辅助开发</div>
+                </div>
+            </div>
+            <div class="section-group">
+                <div class="TitleH2f" style="margin-top: 10px;padding-bottom: 20px;">特别致谢</div>
+                <div class="credits-grid">
+                    <div class="credit-card"><span class="credit-name">MrPotter</span> - 游戏测试</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="CopyRight">© 2025 EachMoon Studios. All Rights Reserved.</div>
+    <div class="CopyRight" style="visibility: hidden;">© 2025 EachMoon Studios. All Rights Reserved.</div>
+
+    <script>
+        (function() {
+            const tabs = document.querySelectorAll('.tab-btn');
+            const contents = {
+                about: document.getElementById('about'),
+                download: document.getElementById('download'),
+                updatelog: document.getElementById('updatelog'),
+                credits: document.getElementById('credits')
+            };
+
+            function activateTab(tabId) {
+                Object.values(contents).forEach(content => {
+                    if(content) content.classList.remove('active');
+                });
+                if(contents[tabId]) contents[tabId].classList.add('active');
+                tabs.forEach(btn => {
+                    btn.classList.remove('active');
+                    if(btn.dataset.tab === tabId) btn.classList.add('active');
+                });
+            }
+
+            tabs.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const tabId = btn.dataset.tab;
+                    if(tabId) activateTab(tabId);
+                });
+            });
+            activateTab('about');
+        })();
+    </script>
+</body>
+</html>
